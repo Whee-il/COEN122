@@ -1,0 +1,9 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/wcockrum/COEN122/Memory/Memory.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sim_1/new/testbench.v,1643154239,verilog,,,,testbench,,,,,,,,
+C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sources_1/new/Data_Memory.v,1643151989,verilog,,C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sources_1/new/Instruction_Memory.v,,Data_Memory,,,,,,,,
+C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sources_1/new/Instruction_Memory.v,1643153915,verilog,,C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sources_1/new/Registers.v,,Instruction_Memory,,,,,,,,
+C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sources_1/new/Registers.v,1643151292,verilog,,C:/Users/wcockrum/COEN122/Memory/Memory.srcs/sim_1/new/testbench.v,,Registers,,,,,,,,
