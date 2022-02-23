@@ -21,10 +21,10 @@
 
 
 module Data_Memory(
-    clk, address, write, read_data, write_data
+    clk, address, write, read, read_data, write_data
     );
     
-    input clk, write;
+    input clk, write, read;
     input [31:0] address;
     input [31:0] write_data;
     output reg [31:0] read_data;
@@ -35,6 +35,7 @@ module Data_Memory(
     
         if(write == 1)
             Data[address[15:0]] = write_data;
-        read_data = Data[address[15:0]];
+        if(read == 1)
+            read_data = Data[address[15:0]];
     end
 endmodule
