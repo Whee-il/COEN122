@@ -22,8 +22,8 @@
 
 module ID_EXMEM(
     PC_IN, PC_4_IN, RS_IN, RT_IN, Const_IN,WriteAddr_IN, ALU_OP_IN, DataWrt_IN, DataRead_IN, MemToReg_IN, RegWrt_IN, JumpMem_IN, Jump_IN, BZN_IN, Branch_IN, SavePC_IN, 
-    PC_OUT, PC_4_OUT, RS_OUT, RT_OUT, Const_OUT,WriteAddr_OUT, ALU_OP_OUT,  DataWrt_OUT, DataRead_OUT, MemToReg_OUT, RegWrt_OUT, JumpMem_OUT, Jump_OUT, BZN_OUT, Branch_OUT, SavePC_OUT, clk
-    );
+    PC_OUT, PC_4_OUT, RS_OUT, RT_OUT, Const_OUT,WriteAddr_OUT, ALU_OP_OUT,  DataWrt_OUT, DataRead_OUT, MemToReg_OUT, RegWrt_OUT, JumpMem_OUT, Jump_OUT, BZN_OUT, Branch_OUT, 
+    SavePC_OUT, clk, AlUControl_IN, ALUControl_OUT);
     input clk;
     
     input [7:0] PC_IN, PC_4_IN;
@@ -33,6 +33,8 @@ module ID_EXMEM(
     input [3:0] ALU_OP_IN;
     
     input [11:0] Const_IN;
+    
+    input [4:0] AlUControl_IN;
     
     input DataWrt_IN, DataRead_IN, MemToReg_IN, RegWrt_IN, JumpMem_IN, Jump_IN, BZN_IN, Branch_IN, SavePC_IN;
     // -------------------------------------------------------------    
@@ -44,6 +46,8 @@ module ID_EXMEM(
     output reg [3:0] ALU_OP_OUT;
     
     output reg [11:0] Const_OUT;
+    
+    output reg [4:0] ALUControl_OUT;
 
     output reg DataWrt_OUT, DataRead_OUT, MemToReg_OUT, RegWrt_OUT, JumpMem_OUT, Jump_OUT, BZN_OUT, Branch_OUT, SavePC_OUT;
         
@@ -61,6 +65,7 @@ module ID_EXMEM(
         BZN_OUT = BZN_IN;
         Branch_OUT = Branch_IN;
         SavePC_OUT = SavePC_IN;
+        ALUControl_OUT = AlUControl_IN;
     end
 
 endmodule
