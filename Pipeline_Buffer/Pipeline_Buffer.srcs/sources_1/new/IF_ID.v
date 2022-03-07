@@ -21,18 +21,17 @@
 
 
 module IF_ID(
-    PC_IN, PC_4_IN, IM_IN, PC_OUT, PC_4_OUT, IM_OUT, clk
+    PC_IN, IM_IN, PC_OUT, IM_OUT, clk
     );
-    input [7:0] PC_IN, PC_4_IN;
+    input [7:0] PC_IN;
     input [31:0] IM_IN;
     input clk;
-    output reg [7:0] PC_OUT, PC_4_OUT;
+    output reg [7:0] PC_OUT;
     output reg [31:0] IM_OUT; 
     
     always@(posedge clk)
     begin
         PC_OUT = PC_IN;
-        PC_4_OUT = PC_4_IN;
         IM_OUT = IM_IN;
     end
 endmodule
