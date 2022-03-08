@@ -25,12 +25,13 @@ module WBstage(PC, rsdata,dataRead, sum, flag, memToReg, Branch, JumpMem, Jump, 
     input [31:0] dataRead, sum, PC, rsdata;
     input clk, memToReg, Branch, flag, JumpMem, Jump;
     output [31:0] writeData, newPC;
-    wire branchsel;
-    wire branchwire, jumpwire;
+    reg branchsel;
+    reg branchwire, jumpwire;
     
-    and(branchsel, Branch, flag);
     
-    always @(posedge clk) begin
+    always @(posedge clk) begin        
+        branchsel = flag & Branch;
+        
         mux(dataRead,sum,memToReg,writeData,clk);
         mux(PC,rsdata,branchsel,branchwire,clk);
         mux(rsdata,dataRead,JumpMem,jumpwire,clk);
