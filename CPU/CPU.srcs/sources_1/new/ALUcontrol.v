@@ -44,6 +44,9 @@ module ALUcontrol(Inst,opcode,clk);
         else if(Inst == 4'b1001) begin //Branch If Zero
             opcode = 4'b0011;
         end
+        else if(Inst == 4'b1011) begin
+            opcode = 4'b0011;
+        end
         else opcode = 4'b0100;
         end
         end
