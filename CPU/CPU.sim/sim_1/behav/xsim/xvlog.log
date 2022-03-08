@@ -37,6 +37,4 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wcockrum/COEN122/ALU/ALU.s
 INFO: [VRFC 10-311] analyzing module mux3_1
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module CPU
-INFO: [VRFC 10-2458] undeclared symbol _, assumed default net type wire [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:40]
-INFO: [VRFC 10-2458] undeclared symbol ID_PC, assumed default net type wire [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:48]
-INFO: [VRFC 10-2458] undeclared symbol ID_ALUOP, assumed default net type wire [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:63]
+INFO: [VRFC 10-2458] undeclared symbol _, assumed default net type wire [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:42]

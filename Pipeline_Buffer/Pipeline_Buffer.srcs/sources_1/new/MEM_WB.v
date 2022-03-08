@@ -27,12 +27,14 @@ module EXMEM_WB(
     
     input clk;
     
-    input [31:0] DATA_IN, rd_IN;
+    input [31:0] DATA_IN;
+    input [5:0] rd_IN;
     input [31:0] ALU_S_IN,rs_IN;
     input ALU_flag_IN;
     input MemToReg_IN, RegWrt_IN, JumpMem_IN, Jump_IN, Branch_IN;
     
-    output reg [31:0] DATA_OUT, rd_OUT;
+    output reg [31:0] DATA_OUT;
+    output reg [5:0] rd_OUT;
     output reg [31:0] ALU_S_OUT,rs_out;
     output reg ALU_flag_OUT;
     output reg MemToReg_OUT, RegWrt_OUT, JumpMem_OUT, Jump_OUT, Branch_OUT;
@@ -48,6 +50,6 @@ module EXMEM_WB(
         RegWrt_OUT = RegWrt_IN;
         JumpMem_OUT = JumpMem_IN;
         Jump_OUT = Jump_IN;
-        Branch_OUT = Branch_OUT;
+        Branch_OUT = Branch_IN;
     end
 endmodule

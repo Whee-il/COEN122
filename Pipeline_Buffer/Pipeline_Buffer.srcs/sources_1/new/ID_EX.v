@@ -56,6 +56,9 @@ module ID_EXMEM(
         PC_OUT = PC_IN;
         RS_OUT = RS_IN;
         RT_OUT = RT_IN;
+        WriteAddr_OUT = WriteAddr_IN;
+        ALU_OP_OUT = ALU_OP_IN;
+        Const_OUT = Const_IN;
         DataWrt_OUT = DataWrt_IN;
         DataRead_OUT = DataRead_IN;
         MemToReg_OUT  = MemToReg_IN;
