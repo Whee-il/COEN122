@@ -1,0 +1,23 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Apps/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 9db59efbf52943578fbc0e2ad0ef20f6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot CPU_behav xil_defaultlib.CPU xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'A' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:40]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'PC_OUT' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:48]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'Inst' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:55]
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'rs' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:61]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'opcode' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:63]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'PC_IN' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:71]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 32 for port 'Const_OUT' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:79]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'B' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:83]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 32 for port 'rd_IN' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:100]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 32 for port 'rd_OUT' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:101]
+WARNING: [VRFC 10-5021] port 'clk' is not connected on this instance [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:71]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'WB_PC' is not permitted [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:112]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'B' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:84]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'A' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:92]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'A' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:110]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'out' [C:/Users/wcockrum/COEN122/CPU/CPU.srcs/sim_1/new/CPU.v:112]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

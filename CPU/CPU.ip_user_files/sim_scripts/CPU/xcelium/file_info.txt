@@ -1,0 +1,2 @@
+CPU.v,verilog,xil_defaultlib,../../../../CPU.gen/sources_1/bd/CPU/sim/CPU.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

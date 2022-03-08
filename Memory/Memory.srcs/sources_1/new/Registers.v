@@ -28,7 +28,6 @@ module Registers(clk, rs_a, rs,rt_a, rt, rd_a, rd, write);
     
     reg [31:0] Registers[63:0];
     
-    
     always@(posedge clk) begin
         rs = Registers[rs_a]; //Update Rs to the given address
         rt = Registers[rt_a]; //Update Rt to the given address

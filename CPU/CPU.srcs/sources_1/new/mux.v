@@ -20,13 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux(A,B,sel,out,clk);
+module Mux(A,B,sel,out);
     input [31:0] A,B;
     input sel;
     output reg [31:0] out;
-    input clk;
     
-    always @(posedge clk) begin
+    always @(*) begin
         if(sel == 0)
             out = A;
         else out = B;

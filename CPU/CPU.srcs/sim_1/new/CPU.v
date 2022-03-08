@@ -31,7 +31,8 @@ module CPU();
    
     //IF STAGE
     wire [7:0] IF_PC;
-    wire [7:0] WB_PC;
+    reg [7:0] WB_PC;
+    
     wire IF_PC_1;
     
     PC pc(WB_PC, IF_PC, clk);
@@ -42,7 +43,6 @@ module CPU();
     Instruction_Memory instruction_memory(clk, IF_PC, IF_inst);
     
     //ID STAGE
-    wire [7:0] ID_PC;
     wire [31:0] ID_inst;
 
     IF_ID buff_if_id(IF_PC, IF_inst, ID_PC, ID_inst, clk);
@@ -63,7 +63,7 @@ module CPU();
     ALUcontrol alucontrol(ID_inst[31:28], ID_ALUOP, clk);
     //EX MEM STAGE
     wire [7:0] EXMEM_PC;
-    wire [32:0] EXMEM_rs, EXMEM_rt;
+    wire [31:0] EXMEM_rs, EXMEM_rt;
     wire [5:0] EXMEM_rd;
     wire [11:0] EXMEM_Const;
     wire [3:0] EXMEM_ALUOP;
@@ -80,8 +80,8 @@ module CPU();
     
     wire [31:0] EXMEM_ALU_IN_1, EXMEM_ALU_IN_2;
     
-    Mux ALU_IN_1_MUX(EXMEM_rs, EXMEM_PC, EX_MEM_SavePC, EXMEM_ALU_IN_1, clk);
-    Mux ALU_IN_2_MUX(EXMEM_rs, EXMEM_PC, EX_MEM_SavePC, EXMEM_ALU_IN_2, clk);
+    Mux ALU_IN_1_MUX(EXMEM_rs, EXMEM_PC, EX_MEM_SavePC, EXMEM_ALU_IN_1);
+    Mux ALU_IN_2_MUX(EXMEM_rs, EXMEM_PC, EX_MEM_SavePC, EXMEM_ALU_IN_2);
     
     
     wire [31:0] EXMEM_ALU_SUM;
@@ -89,7 +89,7 @@ module CPU();
     ALU alu(EXMEM_ALUOP, EXMEM_ALU_IN_1,EXMEM_ALU_IN_2,EXMEM_ALU_SUM, EXMEM_ALU_Z,EXMEM_ALU_N);
     
     wire EXMEM_BranchBZ_Flag;
-    Mux BranchBZ_MUX(EXMEM_ALU_Z, EXMEM_ALU_N, EX_MEM_BZN, EXMEM_BranchBZ_Flag, clk);
+    Mux BranchBZ_MUX(EXMEM_ALU_Z, EXMEM_ALU_N, EX_MEM_BZN, EXMEM_BranchBZ_Flag);
     
     // WRITE BACK STAGE    
     wire [31:0] WB_DataMem_Data;
@@ -106,10 +106,16 @@ module CPU();
       
     wire [31:0] WB_PC_BRANCH, WB_JUMP_JUMPM;
     
+    Mux write_back_mux(WB_DataMem_Data,WB_ALU_SUM,WB_MemToReg,WB_WriteData);
+    Mux pc_branch_mux(IF_PC,WB_rs,WB_branchsel,WB_PC_BRANCH);
+    Mux jump_jumpm_mux(WB_rs,WB_DataMem_Data,WB_JumpMem,WB_JUMP_JUMPM);
+    Mux pc_jump_mux(WB_PC_BRANCH,WB_JUMP_JUMPM,WB_Jump,WB_PC);
     
-    Mux write_back_mux(WB_DataMem_Data,WB_ALU_SUM,WB_MemToReg,WB_WriteData,clk);
-    Mux pc_branch_mux(IF_PC,WB_rs,WB_branchsel,WB_PC_BRANCH,clk);
-    Mux jump_jumpm_mux(WB_rs,WB_DataMem_Data,WB_JumpMem,WB_JUMP_JUMPM,clk);
-    Mux pc_jump_mux(WB_PC_BRANCH,WB_JUMP_JUMPM,WB_Jump,WB_PC,clk);
+    initial
+    begin
+        #20;
+    $finish;
+    end
+    
     
 endmodule
