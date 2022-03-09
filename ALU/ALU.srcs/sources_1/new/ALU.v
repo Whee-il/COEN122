@@ -20,9 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ALU(Opcode, A, B, S, Z, N);
+module ALU(Opcode, A, B, S, Z, N, clk);
     input [3:0] Opcode;
     input [31:0] A, B;
+    input clk;
     output [31:0] S;
     output reg Z, N;
     
@@ -39,7 +40,7 @@ module ALU(Opcode, A, B, S, Z, N);
     
     Ripple_Carry add(input1, input2, S, _);
     
-    always@(Opcode, A, B, S)
+    always@(posedge clk)
     begin
     if(Opcode == 4'b0000) // SUM
     begin

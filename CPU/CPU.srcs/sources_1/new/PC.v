@@ -33,7 +33,8 @@ module PC(
         PC_out = 0;
     end
     
-    always@(posedge clk) begin
+    always@(negedge clk) begin
+        if(PC_in)  
         PC_out = PC_in;
     end       
 endmodule

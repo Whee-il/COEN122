@@ -51,7 +51,7 @@ module ID_EXMEM(
 
     output reg DataWrt_OUT, DataRead_OUT, MemToReg_OUT, RegWrt_OUT, JumpMem_OUT, Jump_OUT, BZN_OUT, Branch_OUT, SavePC_OUT;
         
-    always@(posedge clk)
+    always@(negedge clk)
     begin
         PC_OUT = PC_IN;
         RS_OUT = RS_IN;

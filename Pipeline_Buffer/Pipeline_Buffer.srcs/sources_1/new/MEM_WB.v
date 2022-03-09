@@ -39,7 +39,7 @@ module EXMEM_WB(
     output reg ALU_flag_OUT;
     output reg MemToReg_OUT, RegWrt_OUT, JumpMem_OUT, Jump_OUT, Branch_OUT;
     
-    always@(posedge clk)
+    always@(negedge clk)
     begin
         DATA_OUT = DATA_IN;
         ALU_S_OUT = ALU_S_IN;

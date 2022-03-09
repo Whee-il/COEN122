@@ -29,7 +29,7 @@ module IF_ID(
     output reg [7:0] PC_OUT;
     output reg [31:0] IM_OUT; 
     
-    always@(posedge clk)
+    always@(negedge clk)
     begin
         PC_OUT = PC_IN;
         IM_OUT = IM_IN;
