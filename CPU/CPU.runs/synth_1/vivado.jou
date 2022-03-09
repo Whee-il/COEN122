@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Mar  8 16:33:22 2022
-# Process ID: 15552
+# Start of session at: Tue Mar  8 17:40:58 2022
+# Process ID: 14216
 # Current directory: C:/Users/wcockrum/COEN122/CPU/CPU.runs/synth_1
 # Command line: vivado.exe -log ALU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU.tcl
 # Log file: C:/Users/wcockrum/COEN122/CPU/CPU.runs/synth_1/ALU.vds

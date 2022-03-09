@@ -2,8 +2,8 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Mar  8 17:12:35 2022
-# Process ID: 6600
+# Start of session at: Tue Mar  8 17:52:08 2022
+# Process ID: 10900
 # Current directory: C:/Users/wcockrum/COEN122/CPU/CPU.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/wcockrum/COEN122/CPU/CPU.sim/sim_1/behav/xsim/xsim.dir/CPU_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/wcockrum/COEN122/CPU/CPU.sim/sim_1/behav/xsim/webtalk.log

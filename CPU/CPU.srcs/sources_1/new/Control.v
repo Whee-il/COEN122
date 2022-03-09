@@ -85,7 +85,7 @@ module Control(
             Branch = 0;
             SavePC = 0;
         end
-        if(Inst == 4'b0000) begin //Increment
+        if(Inst == 4'b0101) begin //Increment
             DataWrt = 0;
             DataRead = 0;
             MemToReg = 0;
