@@ -28,14 +28,14 @@ module Registers(clk, rs_a, rs,rt_a, rt, rd_a, rd, write);
     
     reg [31:0] Registers[63:0];
     
-    initial begin
+    /*initial begin
         Registers[0] = 0;
         Registers[1] = 1;
         Registers[2] = 2;
         Registers[3] = 3;
         Registers[4] = 4;
         Registers[5] = 5;
-    end
+    end*/
     
     always@(posedge clk) begin
         rs = Registers[rs_a]; //Update Rs to the given address

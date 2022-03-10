@@ -40,6 +40,8 @@ module ALU(Opcode, A, B, S, Z, N, clk);
     
     Ripple_Carry add(input1, input2, S, _);
     
+    //two_compliment sub(S, Snot);
+    
     always@(posedge clk)
     begin
     if(Opcode == 4'b0000) // SUM
