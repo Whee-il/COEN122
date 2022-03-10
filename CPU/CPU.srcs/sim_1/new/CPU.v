@@ -130,7 +130,7 @@ module CPU();
     
     initial
     begin
-        #200;
+        #300;
     $finish;
     end
     
