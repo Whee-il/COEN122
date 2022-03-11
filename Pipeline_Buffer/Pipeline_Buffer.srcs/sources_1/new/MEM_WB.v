@@ -52,4 +52,9 @@ module EXMEM_WB(
         Jump_OUT = Jump_IN;
         Branch_OUT = Branch_IN;
     end
+    
+    always@(posedge clk)
+    begin
+
+    end
 endmodule

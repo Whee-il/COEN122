@@ -96,7 +96,7 @@ module CPU();
     Control control(ID_inst[31:28], ID_DataWrt, ID_DataRead, ID_MemToReg, ID_RegWrt, ID_JumpMem, ID_Jump, ID_BZN, ID_Branch, ID_SavePC, clk);
     
 
-    Registers registers(clk, ID_inst[21:16], ID_rs, ID_inst[15:10], ID_rt, WB_WriteAddr, WB_WriteData, ID_RegWrt);
+    Registers registers(clk, ID_inst[21:16], ID_rs, ID_inst[15:10], ID_rt, WB_WriteAddr, WB_WriteData, WB_RegWrt);
     
     
     ALUcontrol alucontrol(ID_inst[31:28], ID_ALUOP, clk);

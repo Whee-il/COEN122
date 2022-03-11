@@ -32,7 +32,7 @@ module ALUcontrol(Inst,opcode,clk);
         if(Inst == 4'b0100) begin //Add
             opcode = 4'b0000;
         end
-        else if(Inst == 4'b0000) begin //Increment
+        else if(Inst == 4'b0101) begin //Increment
             opcode = 4'b0001;
         end
         else if(Inst == 4'b0110) begin //Negate
