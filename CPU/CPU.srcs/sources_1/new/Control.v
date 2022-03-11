@@ -21,13 +21,13 @@
 
 
 module Control(
-        Inst, DataWrt, DataRead, MemToReg, RegWrt, JumpMem, Jump, BZN, Branch, SavePC, clk
+        Inst, DataWrt, DataRead, MemToReg, RegWrt, JumpMem, Jump, BZN, Branch, SavePC, UseConst, clk
     );
     
     input [3:0] Inst;
     input clk;
     
-    output reg DataWrt, DataRead, MemToReg, RegWrt, JumpMem, Jump, BZN, Branch, SavePC;
+    output reg DataWrt, DataRead, MemToReg, RegWrt, JumpMem, Jump, BZN, Branch, SavePC,UseConst;
         
     always@(posedge clk) begin
         if(Inst == 4'b0000) begin //NoOp
@@ -40,6 +40,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b1111) begin //Save PC
             DataWrt = 0;
@@ -51,6 +52,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 1;
+            UseConst = 1;
         end
         if(Inst == 4'b1110) begin //Load
             DataWrt = 0;
@@ -62,6 +64,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b0011) begin //Store
             DataWrt = 1;
@@ -73,6 +76,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b0100) begin //Add
             DataWrt = 0;
@@ -84,6 +88,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b0101) begin //Increment
             DataWrt = 0;
@@ -95,6 +100,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 1;
         end
         if(Inst == 4'b0110) begin //Negate
             DataWrt = 0;
@@ -106,6 +112,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b0111) begin //Subtract
             DataWrt = 0;
@@ -117,6 +124,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b1000) begin //Jump
             DataWrt = 0;
@@ -128,6 +136,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b1001) begin //Branch If Zero
             DataWrt = 0;
@@ -139,6 +148,7 @@ module Control(
             BZN = 0;
             Branch = 1;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b1010) begin //Jump Memory
             DataWrt = 0;
@@ -150,6 +160,7 @@ module Control(
             BZN = 0;
             Branch = 0;
             SavePC = 0;
+            UseConst = 0;
         end
         if(Inst == 4'b1011) begin //Branch if Negative
             DataWrt = 0;
@@ -161,6 +172,7 @@ module Control(
             BZN = 1;
             Branch = 1;
             SavePC = 0;
+            UseConst = 0;
         end
     end       
 endmodule
