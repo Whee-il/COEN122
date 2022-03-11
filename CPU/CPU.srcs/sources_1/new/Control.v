@@ -152,7 +152,7 @@ module Control(
         end
         if(Inst == 4'b1010) begin //Jump Memory
             DataWrt = 0;
-            DataRead = 0;
+            DataRead = 1;
             MemToReg = 0;
             RegWrt = 0;
             JumpMem = 1;

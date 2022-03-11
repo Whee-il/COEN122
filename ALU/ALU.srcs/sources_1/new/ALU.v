@@ -72,14 +72,16 @@ module ALU(Opcode, A, B, S, Z, N, clk);
     end
     always@(S)
     begin
-    if(S == 32'b0)
-        Z = 1;
-    else
-        Z = 0;
-    if(S[31] == 1'b1)
-        N = 1;
-    else
-        N = 0;
+    if(Opcode != 4'b0100)
+    begin
+    if(S == 32'b0) begin
+        Z = 1; end
+    else begin
+        Z = 0; end
+    if(S[31] == 1'b1) begin
+        N = 1; end
+    else begin
+        N = 0; end
     end
-    
+    end
 endmodule

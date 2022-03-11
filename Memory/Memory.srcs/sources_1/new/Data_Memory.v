@@ -32,7 +32,7 @@ module Data_Memory(
     reg [31:0] Data[65535:0];
     
     initial begin
-        Data[0] = 10;
+        Data[0] = 2;
         Data[1] = 11;
         Data[2] = 12;
         Data[3] = 13;

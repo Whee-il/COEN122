@@ -45,13 +45,14 @@ module Instruction_Memory(
     assign Instructions[14] = 32'b00110001000001000000000000000000;  //x4 <- 4*/
     assign Instructions[0] = 32'b00000000000000000000000000000000;  //nop
 
-    assign Instructions[1] = 32'b11110000000000000001110000000000;   //SVPC x0 <- PC + 7 x0 = 8
+    assign Instructions[1] = 32'b11110000010000000000000000000000;  //SVPC x1 <- PC + 0 x0 = 1
     assign Instructions[2] = 32'b00000000000000000000000000000000;  //nop
     assign Instructions[3] = 32'b00000000000000000000000000000000;  //nop
     assign Instructions[4] = 32'b00000000000000000000000000000000; //nop
-    assign Instructions[5] = 32'b00000000000000000000000000000000; //nop
+    assign Instructions[5] = 32'b01110000100000010000010000000000; //SUB x2 = x1 - x1 = 0 
     assign Instructions[6] = 32'b00000000000000000000000000000000; //nop
-    assign Instructions[7] = 32'b00000000000000000000000000000000; //nop
+    //assign Instructions[7] = 32'b00000000000000000000000000000000; //nop
+    assign Instructions[7] = 32'b10010000000000010000000000000000; //BZero x1
     assign Instructions[8] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[9] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[10] = 32'b00000000000000000000000000000000; //nop

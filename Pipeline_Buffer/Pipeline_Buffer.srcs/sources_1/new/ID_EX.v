@@ -32,7 +32,7 @@ module ID_EXMEM(
     input [5:0] WriteAddr_IN;
     input [3:0] ALU_OP_IN;
     
-    input [11:0] Const_IN;
+    input [5:0] Const_IN;
     
     input [4:0] AlUControl_IN;
     
@@ -45,7 +45,7 @@ module ID_EXMEM(
     output reg [5:0] WriteAddr_OUT;
     output reg [3:0] ALU_OP_OUT;
     
-    output reg [11:0] Const_OUT;
+    output reg [5:0] Const_OUT;
     
     output reg [4:0] ALUControl_OUT;
 

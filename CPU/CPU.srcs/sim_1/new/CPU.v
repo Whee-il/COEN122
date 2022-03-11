@@ -47,7 +47,7 @@ module CPU();
     wire [31:0] EXMEM_PC;
     wire [31:0] EXMEM_rs, EXMEM_rt;
     wire [5:0] EXMEM_rd;
-    wire [11:0] EXMEM_Const;
+    wire [5:0] EXMEM_Const;
     wire [3:0] EXMEM_ALUOP;
     wire [31:0] EXMEM_DataMem_Data;
     wire [31:0] EXMEM_Const_Extended;
@@ -71,14 +71,14 @@ module CPU();
     // IF STAGE
     always@(posedge clk) begin
         //and(WB_branchsel, EXMEM_BranchBZ_Flag, WB_Branch);
-        WB_branchsel = WB_Branch & EXMEM_BranchBZ_Flag;
+        WB_branchsel = WB_Branch & WB_BranchBZ_Flag;
     end
 
     
     ALU PC_adder(4'b0001, _, IF_PC, IF_PC_1, _, _, clk);
-    Mux pc_jump_mux(WB_PC_BRANCH,WB_JUMP_JUMPM,WB_Jump,WB_PC);
     Mux pc_branch_mux(IF_PC_1,WB_rs,WB_branchsel,WB_PC_BRANCH);
     Mux jump_jumpm_mux(WB_rs,WB_DataMem_Data,WB_JumpMem,WB_JUMP_JUMPM);
+    Mux pc_jump_mux(WB_PC_BRANCH,WB_JUMP_JUMPM,WB_Jump,WB_PC);
 
     PC pc(WB_PC, IF_PC, clk);
     
@@ -102,7 +102,7 @@ module CPU();
     ALUcontrol alucontrol(ID_inst[31:28], ID_ALUOP, clk);
 
     //EXMEM STAGE
-    ID_EXMEM buff_id_exmem(ID_PC, ID_rs, ID_rt, ID_inst[21:10], ID_inst[27:22], ID_ALUOP, ID_DataWrt, ID_DataRead, ID_MemToReg, ID_RegWrt, ID_JumpMem, ID_Jump, ID_BZN, ID_Branch, ID_SavePC,ID_UseConst,
+    ID_EXMEM buff_id_exmem(ID_PC, ID_rs, ID_rt, ID_inst[15:10], ID_inst[27:22], ID_ALUOP, ID_DataWrt, ID_DataRead, ID_MemToReg, ID_RegWrt, ID_JumpMem, ID_Jump, ID_BZN, ID_Branch, ID_SavePC,ID_UseConst,
                            EXMEM_PC, EXMEM_rs, EXMEM_rt, EXMEM_Const, EXMEM_rd, EXMEM_ALUOP, EX_MEM_DataWrt, EX_MEM_DataRead, EX_MEM_MemToReg, EX_MEM_RegWrt, EX_MEM_JumpMem, EX_MEM_Jump, EX_MEM_BZN, EX_MEM_Branch, EX_MEM_SavePC,EX_MEM_UseConst, clk);
 
     Data_Memory dataMemory(clk, EXMEM_rs, EX_MEM_DataWrt, EX_MEM_DataRead, EXMEM_DataMem_Data, EXMEM_rt);
