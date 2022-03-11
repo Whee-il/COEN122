@@ -1,3 +1,7 @@
+
+*.bat
+*.prj
+
 ## log files
 *.log
 *.jou

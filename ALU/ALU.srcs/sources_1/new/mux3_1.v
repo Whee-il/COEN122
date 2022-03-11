@@ -20,19 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux3_1(A, One, Anot, S, out);
+module mux3_1(A, B, Anot, S, out);
     
-    input [31:0] A, One, Anot;
+    input [31:0] A, B, Anot;
     input [1:0] S;
     output reg [31:0] out;
     
-    always @(A, One, Anot, S)
+    always @(A, B, Anot, S)
     begin
     if(S==2'b00)
         out = A;
     else
         if(S==2'b01)
-            out = One;
+            out = B;
         else
             out = Anot;        
     end

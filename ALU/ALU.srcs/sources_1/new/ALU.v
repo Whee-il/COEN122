@@ -27,14 +27,14 @@ module ALU(Opcode, A, B, S, Z, N, clk);
     output [31:0] S;
     output reg Z, N;
     
-    reg select1;
-    reg [1:0] select2;
+    reg [1:0] select1, select2;
     
-    wire [31:0] input1, input2, Anot;
+    wire [31:0] input1, input2, Anot, Bnot;
     
-    two_compliment comp(A, Anot);
-    
-    mux2_1 sel1(B, 32'b0, select1, input1);
+    two_compliment compA(A, Anot);
+    two_compliment compB(B, Bnot);
+
+    mux3_1 sell(B, 32'b0, Bnot, select1, input1);
     
     mux3_1 sel2(A, 32'b1, Anot, select2, input2);
     
@@ -46,27 +46,27 @@ module ALU(Opcode, A, B, S, Z, N, clk);
     begin
     if(Opcode == 4'b0000) // SUM
     begin
-        select1 = 1'b0; //B
+        select1 = 2'b00; //B
         select2 = 2'b00; //A
     end
     else if(Opcode == 4'b0001) // Increment
     begin
-        select1 = 1'b0; // B
+        select1 = 2'b00; // B
         select2 = 2'b01; //1
     end
     else if(Opcode == 4'b0010) // Negate
     begin
-        select1 = 1'b1; // 0
+        select1 = 2'b01; // 0
         select2 = 2'b10; //Anot
     end
     else if(Opcode == 4'b0011) // Subtract
     begin
-        select1 = 1'b0; //B
-        select2 = 2'b10; //Anot
+        select1 = 2'b10; //Bnot
+        select2 = 2'b00; //A
     end    
     else if(Opcode == 4'b0100) // Pass A
     begin
-        select1 = 1'b1; // 0
+        select1 = 2'b01; // 0
         select2 = 2'b00; // A
     end
     
@@ -79,5 +79,5 @@ module ALU(Opcode, A, B, S, Z, N, clk);
     else
         N = 0;
     end
-
+    
 endmodule
