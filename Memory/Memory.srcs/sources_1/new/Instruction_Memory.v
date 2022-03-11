@@ -28,7 +28,7 @@ module Instruction_Memory(
     output reg [31:0] Instruction;
     
     wire [31:0] Instructions[255:0];
-    assign Instructions[0] = 32'b00000000000000000000000000000000;   //nop
+    /*assign Instructions[0] = 32'b00000000000000000000000000000000;   //nop
     assign Instructions[1] = 32'b00000000000000000000000000000000;  //nop
     assign Instructions[2] = 32'b00110000000000000000000000000000;  //x0 <- 0
     assign Instructions[3] = 32'b00000000000000000000000000000000;   //nop
@@ -42,11 +42,11 @@ module Instruction_Memory(
     assign Instructions[11] = 32'b00110000110000110000000000000000;  //x3 <- 3
     assign Instructions[12] = 32'b00000000000000000000000000000000;   //nop
     assign Instructions[13] = 32'b00000000000000000000000000000000;  //nop
-    assign Instructions[14] = 32'b00110001000001000000000000000000;  //x4 <- 4
-    assign Instructions[15] = 32'b00000000000000000000000000000000;   //nop
-    assign Instructions[16] = 32'b00000000000000000000000000000000;  //nop
-    assign Instructions[17] = 32'b11100001000000110000000000000000; //x4 <- x3
-    assign Instructions[18] = 32'b00000000000000000000000000000000; //nop
+    assign Instructions[14] = 32'b00110001000001000000000000000000;  //x4 <- 4*/
+    assign Instructions[0] = 32'b00000000000000000000000000000000;   //nop
+    assign Instructions[1] = 32'b00000000000000000000000000000000;  //nop
+    assign Instructions[2] = 32'b11100001000000110000000000000000; //x4 <- x3
+    /*assign Instructions[18] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[19] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[20] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[21] = 32'b01110000000001000000110000000000; //x0 <- x1 - x4
@@ -64,7 +64,7 @@ module Instruction_Memory(
     assign Instructions[33] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[34] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[35] = 32'b00000000000000000000000000000000; //nop
-    assign Instructions[35] = 32'b01100000000000010000000000000000; //x0 <- -x1
+    assign Instructions[35] = 32'b01100000000000010000000000000000; //x0 <- -x1*/
 
     //assign Instructions[3] = 32'b01000000110000100000110000000000;
     //assign Instructions[4] = 32'b01000001000000100000010000000000;
