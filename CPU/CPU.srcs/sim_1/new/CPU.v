@@ -126,7 +126,7 @@ module CPU();
     
     
     
-    Mux write_back_mux(WB_DataMem_Data,WB_ALU_SUM,WB_MemToReg,WB_WriteData);
+    Mux write_back_mux(WB_ALU_SUM,WB_DataMem_Data,WB_MemToReg,WB_WriteData);
     
     initial
     begin
