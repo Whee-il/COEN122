@@ -57,7 +57,6 @@ module Instruction_Memory(
     assign Instructions[10] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[11] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[12] = 32'b00000000000000000000000000000000; //nop
-    assign Instructions[13] = 32'b00000000000000000000000000000000; //nop
 
     /*assign Instructions[22] = 32'b00000000000000000000000000000000; //nop
     assign Instructions[23] = 32'b00000000000000000000000000000000; //nop
