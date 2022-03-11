@@ -32,12 +32,12 @@ module Data_Memory(
     reg [31:0] Data[65535:0];
     
     initial begin
-        Data[0] = 2;
-        Data[1] = 11;
-        Data[2] = 12;
-        Data[3] = 13;
-        Data[4] = 14;
-        Data[5] = 15;
+        Data[0] = 10;
+        Data[1] = 10;
+        Data[2] = 10;
+        Data[3] = 10;
+        Data[4] = 10;
+        Data[5] = 10;
     end
     
     always@(posedge clk) begin

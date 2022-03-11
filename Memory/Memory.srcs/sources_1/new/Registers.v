@@ -32,7 +32,7 @@ module Registers(clk, rs_a, rs,rt_a, rt, rd_a, rd, write);
         Registers[0] = 0;
         Registers[1] = 0;
         Registers[2] = 0;
-        Registers[3] = 0;
+        Registers[3] = 5;
         Registers[4] = 0;
         Registers[5] = 0;
         Registers[6] = 0;
