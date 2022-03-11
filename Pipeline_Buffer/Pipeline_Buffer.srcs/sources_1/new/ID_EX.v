@@ -26,7 +26,7 @@ module ID_EXMEM(
     SavePC_OUT, clk, AlUControl_IN, ALUControl_OUT);
     input clk;
     
-    input [7:0] PC_IN;
+    input [31:0] PC_IN;
     input [31:0] RS_IN, RT_IN;
     
     input [5:0] WriteAddr_IN;
@@ -39,7 +39,7 @@ module ID_EXMEM(
     input DataWrt_IN, DataRead_IN, MemToReg_IN, RegWrt_IN, JumpMem_IN, Jump_IN, BZN_IN, Branch_IN, SavePC_IN;
     // -------------------------------------------------------------    
     
-    output reg [7:0] PC_OUT;
+    output reg [31:0] PC_OUT;
     output reg [31:0] RS_OUT, RT_OUT;
     
     output reg [5:0] WriteAddr_OUT;

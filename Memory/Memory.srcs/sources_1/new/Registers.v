@@ -30,11 +30,15 @@ module Registers(clk, rs_a, rs,rt_a, rt, rd_a, rd, write);
     
     initial begin
         Registers[0] = 0;
-        Registers[1] = 1;
-        Registers[2] = 2;
-        Registers[3] = 3;
-        Registers[4] = 4;
-        Registers[5] = 5;
+        Registers[1] = 0;
+        Registers[2] = 0;
+        Registers[3] = 0;
+        Registers[4] = 0;
+        Registers[5] = 0;
+        Registers[6] = 0;
+        Registers[7] = 0;
+        Registers[8] = 0;
+        Registers[9] = 0;
     end
     
     always@(posedge clk) begin

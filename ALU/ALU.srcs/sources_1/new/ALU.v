@@ -69,7 +69,9 @@ module ALU(Opcode, A, B, S, Z, N, clk);
         select1 = 2'b01; // 0
         select2 = 2'b00; // A
     end
-    
+    end
+    always@(S)
+    begin
     if(S == 32'b0)
         Z = 1;
     else

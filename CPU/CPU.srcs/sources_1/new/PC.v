@@ -24,10 +24,10 @@ module PC(
         PC_in, PC_out, clk
     );
     
-    input [7:0] PC_in;
+    input [31:0] PC_in;
     input clk;
     
-    output reg [7:0] PC_out;
+    output reg [31:0] PC_out;
     
     initial begin
         PC_out = 0;

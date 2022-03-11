@@ -23,10 +23,10 @@
 module IF_ID(
     PC_IN, IM_IN, PC_OUT, IM_OUT, clk
     );
-    input [7:0] PC_IN;
+    input [31:0] PC_IN;
     input [31:0] IM_IN;
     input clk;
-    output reg [7:0] PC_OUT;
+    output reg [31:0] PC_OUT;
     output reg [31:0] IM_OUT; 
     
     always@(negedge clk)

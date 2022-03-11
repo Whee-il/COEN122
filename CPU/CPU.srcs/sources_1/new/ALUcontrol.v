@@ -41,8 +41,8 @@ module ALUcontrol(Inst,opcode,clk);
         else if(Inst == 4'b0111) begin //Subtract
             opcode = 4'b0011;
         end
-        else if(Inst == 4'b1001) begin //Branch If Zero
-            opcode = 4'b0011;
+        else if(Inst == 4'b1111) begin //SVPC
+            opcode = 4'b0000;
         end
         else opcode = 4'b0100;
         end
